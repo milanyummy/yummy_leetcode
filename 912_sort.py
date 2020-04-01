@@ -26,6 +26,20 @@ def sortArray(nums):
     #             nums.insert(j, nums.pop(i))
     # return nums
 
+    #二分插入排序：在序列有序部分中通过二分法找到新元素的位置gcgnxz
+    # for i in range (1, len(nums)):
+    #     low = 0
+    #     high = i-1
+    #     
+    #     while low <= high:
+    #         m = int((low+high) / 2)
+    #         if nums[i] < nums[m]:
+    #             high = m -1
+    #         else:
+    #             low = m + 1
+    #     nums.insert(low , nums.pop(i))#low == high +1
+    # return nums 
+    
     #快速排序：
     
 nums = [3,-1]
