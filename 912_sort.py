@@ -40,8 +40,27 @@ def sortArray(nums):
     #     nums.insert(low , nums.pop(i))#low == high +1
     # return nums 
     
-    #快速排序：
+    #快速排序：选取一个基准值，小数在左大数在右，然后分区递归进行
+    def quickSort(qlist, start, end):
+        if start >= end:
+            return
+        pivot = qlist[start]
+        low = start
+        high = end
+        while low < high:
+            while low < high and qlist[high] >= pivot:
+                high -= 1
+            qlist[low] = qlist[high]
+            while low < high and qlist[low] < pivot:
+                low += 1
+            qlist[high] = qlist[low]
+        qlist[low] = pivot
+        quickSort(qlist, start, low-1)
+        quickSort(qlist, low+1, end) 
     
-nums = [3,-1]
+    quickSort(nums, 0, len(nums)-1)
+    return nums
+
+nums = [5,1,1,2,0,0]
 
 print(sortArray(nums))
