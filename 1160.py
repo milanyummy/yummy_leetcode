@@ -1,9 +1,8 @@
-import copy
 words = ["hello","world","leetcode"]
 chars = "welldonehoneyr"
 length = 0
 for word in words:
-    charlist = copy.deepcopy(chars)
+    charlist = chars
     for letter in word:
         charlist = charlist.replace(letter, "", 1)
     if len(chars) - len(charlist) == len(word):
